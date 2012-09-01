@@ -41,8 +41,8 @@
 	};
 
 	okButton.addEventListener("click", function() {
-		heart.style.left = leftText.value + "px";
-		heart.style.top = topText.value + "px";
+		fish.style.left = leftText.value + "px";
+		fish.style.top = topText.value + "px";
 	}, false);
 	
 	autoButton.addEventListener("click", function() {
