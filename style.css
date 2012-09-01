@@ -1,0 +1,12 @@
+﻿div {
+  position  : relative; 
+  overflow  : hidden;
+  width     : 1440px; 
+  height    : 900px; 
+}
+
+Img#heart {
+  position  : absolute;
+  left      : 300px;
+  top       : 100px;
+}
