@@ -5,7 +5,7 @@
 		autoButton = document.getElementById("autoButton"),
 		leftText = document.getElementById("leftText"),
 		topText = document.getElementById("topText"),
-		heart = document.getElementById("heart"),
+		fish = document.getElementById("fish"),
 		top = 0,
 		left = 0;
 
@@ -34,15 +34,15 @@
                    }
 			leftText.value = left;
 			topText.value = top;
-			heart.style.left = left + "px";
-			heart.style.top = top + "px";
+			fish.style.left = left + "px";
+			fish.style.top = top + "px";
 			setTimeout(interval, 100);
 		
 	};
 
 	okButton.addEventListener("click", function() {
-		heart.style.left = leftText.value + "px";
-		heart.style.top = topText.value + "px";
+		fish.style.left = leftText.value + "px";
+		fish.style.top = topText.value + "px";
 	}, false);
 	
 	autoButton.addEventListener("click", function() {
