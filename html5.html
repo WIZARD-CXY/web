@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="JavaScript/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="JavaScript/jquery.min.js"></script>
+  <script src="JavaScript/jquery-ui.min.js"></script>
+  <style type="text/css">
+    .slider { 
+	margin: 10px;
+	width: 600px;
+	}
+	p
+	{
+		font-size:2em;
+	}
+  </style>
+  <script>
+  $(document).ready(function() {
+	var fish=document.getElementById("myfish");
+    $("#sliderH").slider(
+	{
+	min:0,
+	max:50,
+	change: function(event, ui){
+			fish.style.left=ui.value*10+"px";
+			document.getElementById("textH").value=ui.value;
+		}
+	});
+	$("#sliderV").slider(
+	{
+	min:0,
+	max:50,
+		change: function(event, ui){
+			fish.style.top=250+ui.value*8+"px";
+			document.getElementById("textV").value=ui.value;
+		}
+	});
+  });
+  </script>
+</head>
+<body style="font-size:62.5%;">
+  
+<p>Horizon slider</p><div class="slider" id="sliderH"></div><input type="text" value="0" id="textH" />
+<p>Vertical slider</p><div class="slider" id="sliderV"></div><input type="text" value="0" id="textV" />
+<img src="bg.jpg" style="top:250px;left:0px;position:absolute" />
+<img src="fish.png" style="top:250px;left:0px;position:absolute" id="myfish" />
+</body>
+</html>

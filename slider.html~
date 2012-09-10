@@ -1,3 +1,4 @@
+<!-- Only for Chrome -->
 <html>
 <body>
 <input type="range" min=0 max=100 step=2 value=0 id="sliderH" onchange="changeValue(this.value,'H')">
