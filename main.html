@@ -1,14 +1,58 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><title>Wizard Robot Assist for ZJUDancer !</title> 
-        <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"></head>
-    <body bgcolor="#d0d0d0">
+        <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript"> 
+         $(document).ready(function(){
+          $("#reboot").click(function(){
+            alert("The Robot is rebooting, Please wait........");
+          });
+          $("#poweroff").click(function(){
+            alert("The Robot is poweroffing......");
+          });
+          $("#startRebot").click(function(){
+            alert("The rebot has been started");
+          });
+         $("#killRebot").click(function(){
+            alert("The rebot has been killed");
+          });
+         $("#killMonitor").click(function(){
+            alert("The Monitor has been killed");
+          });
+         $("#startMonitor").click(function(){
+            alert("The Monitor has been Started, Please refresh the web page to monitor");
+          });
+         $(".flip").mouseover(function(){
+         $(".panel").slideToggle("slow");
+           });
+         });
+</script>
+<style type="text/css"> 
+div.panel,p.flip
+{
+margin:0px;
+padding:5px;
+text-align:center;
+background:#CC99FF;
+border:solid 1px #c3c3c3;
+}
+div.panel
+{
+height:80px;
+display:none;
+}
+</style>
+</head>
+ 
+</head>
+        <body bgcolor="#6699FF">
         <td width="50%" valign="top">
             <h1 align="center">This is the Wizard Robot Assist of WIZARD RTOS for Bot5. </h1>
             <marquee scrollamount=4 ><font size=5> Created By Wizard CXY !</font></marquee>
             <img src="img/blue_wizard.png" alt="smile face">
             <script type="text/javascript">
                 var d = new Date()
-var time = d.getHours()
+                var time = d.getHours()
 
 if (time<12)
 {
@@ -47,39 +91,43 @@ else
                     <td>
 
                         <form method="post" action="http://192.168.1.215/cgi-bin/reboot.cgi">
-                            <p><input value="reboot" type="submit"></p>
+                            <p><input id="reboot" value="reboot" type="submit"></p>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="http://192.168.1.215/cgi-bin/poweroff.cgi">
-                            <p><input value="poweroff" type="submit"></p>
+                            <p><input id="poweroff" value="poweroff" type="submit"></p>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="http://192.168.1.215/cgi-bin/rebot.cgi">
-                            <p><input value="Start rebot" type="submit"></p>
+                            <p><input id="startRebot" value="Start rebot" type="submit"></p>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="http://192.168.1.215/cgi-bin/kill_rebot.cgi">
-                            <p><input value="Kill rebot" type="submit"></p>
+                            <p><input id="killRebot" value="Kill rebot" type="submit"></p>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="http://192.168.1.215/cgi-bin/start_monitor.cgi">
-                            <p><input value="start monitor" type="submit"></p>
+                            <p><input id="startMonitor"value="start monitor" type="submit"></p>
                         </form>
                     </td>
                     <td>
                         <form method="post" action="http://192.168.1.215/cgi-bin/kill_monitor.cgi">
-                            <p><input value="Kill monitor" type="submit"></p>
+                            <p><input id="killMonitor" value="Kill monitor" type="submit"></p>
                         </form>
                     </td>
                 </tr>
             </table>
             <h2>Below is uploading file section</h2>
-            <b>For example : like /home/bot5/cxy/ . And you must have the right permission of your dest dir !</b><br>
-            <b>Important !!  Do not forget the  last "/"  , or the Beam will fail!</b><br>
+            <div class="panel">
+            <b>For example : Dest Dir is like /home/bot5/cxy/ . And you must have the right permission of your dest dir !</b><br>
+            <b>Important !!  Do not forget the  last "/"  , or the Beam will fail!</b>
+            </div>
+            <p class="flip">Mouse on me to toggle on&off the HowTo</p>
+
             <form enctype="multipart/form-data" action="http://192.168.1.215/cgi-bin/save_file.py" method="post">
                 <p>File to upload: <input name="file" type="file"></p>
                 <p>Dest dir is : <input name="dir" type="text"></p>
