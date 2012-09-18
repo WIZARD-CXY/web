@@ -10,6 +10,10 @@
 <body>
 <h1>Welcome to YZD's Website!</h1>
 <img src=http://192.168.1.215:8080/?action=stream alt="Not work for now ..... maybe try again later">
+<form>
+<input type="text" id="textbox" onkeyup="MakeFile(textbox.value)" />
+<input type="button" id="action" onclick="MakeFile(textbox.value)" value="action" />
+</form>
 <div style="margin-top:20px;">
 		<input id="ss" class="easyui-slider" value="12" style="width:300px" data-options="
 				showTip:true,
@@ -22,5 +26,6 @@
 				}">
 </div>
 <br />
+<p>State: <span id="state"></span></p>
 </body>
 </html>
