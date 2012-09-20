@@ -1,14 +1,14 @@
 var xmlHttp
-function MakeFile(str)
+function startMotion(value)
 {
 if (str.length==0)
   {
   document.getElementById("state").innerHTML=""
   }
 xmlHttp=new XMLHttpRequest()
-url="/cgi-bin/hello.py"
+url="/cgi-bin/startMotion.py"
 str=str*4+300
-url=url+"?motiondata="+"500"+str
+url=url+"?motiondata="+"500"+value
 xmlHttp.onreadystatechange=stateChanged
 xmlHttp.open("get",url,true)
 xmlHttp.send()
