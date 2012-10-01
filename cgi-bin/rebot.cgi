@@ -1,4 +1,3 @@
 #!/bin/sh
 
-cd /home/bot5/yuling/
-./rebot
+cd /home/bot5/yuling/ && ./rebot

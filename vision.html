@@ -2,38 +2,37 @@
 <html><head><title>Wizard RTOS for ZJUDancer !</title> 
         <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
         <link rel="stylesheet" type="text/css" href="themes/metro/easyui.css">
-	<link rel="stylesheet" type="text/css" href="themes/icon.css">
-	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
-	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
-        </head>
-        <body >
-            <h2>Below is Robot vision section</h2>
-            <img src=http://192.168.1.215:8080/?action=stream alt="Not work for now ..... maybe try again later">
-               <br/>
-               <br/>
-               <br/>
-               <input class="easyui-slider" value="12"  style="width:300px"  
-            data-options="showTip:true,rule:[0,'|',25,'|',50,'|',75,'|',100]" />  
+        <link rel="stylesheet" type="text/css" href="themes/icon.css">
+        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    </head>
+    <body >
+        <h2>Below is Robot vision section</h2>
+        <img src=http://192.168.1.215:8080/?action=stream alt="Not work for now ..... maybe try again later">
+        <br/>
+        <br/>
+        <br/>
+        <input class="easyui-slider" value="12"  style="width:300px"  
+        data-options="showTip:true,rule:[0,'|',25,'|',50,'|',75,'|',100]" />  
 
-                <br/>
-                <br/>
-                 <div id="p" class="easyui-panel" style="width:500px;height:200px;padding:10px;"  
+        <br/>
+        <br/>
+        <div id="p" class="easyui-panel" style="width:500px;height:200px;padding:10px;"  
             title="My Panel" iconCls="icon-save" collapsible="true">  
-              hello world 
-    </div>  
+            hello world 
+        </div>  
 
 
-    <br/>
-    <br/>
-    <form id="ff" method="post">  
-        <div>  
-            <label for="name">Name:</label>  
-            <input class="easyui-validatebox" type="text" name="name" data-options="required:true" />  
-        </div>  
-        <div>  
-            <label for="email">Email:</label>  
-            <input class="easyui-validatebox" type="text" name="email" data-options="validType:'email'" />  
-        </div>  
-    haha  
-                                                                                                               </form>  
+        <br/>
+        <br/>
+        <form id="ff" method="post">  
+            <div>  
+                <label for="name">Name:</label>  
+                <input class="easyui-validatebox" type="text" name="name" data-options="required:true" />  
+            </div>  
+            <div>  
+                <label for="email">Email:</label>  
+                <input class="easyui-validatebox" type="text" name="email" data-options="validType:'email'" />  
+            </div>  
+        </form>  
 </body></html>

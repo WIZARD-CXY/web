@@ -74,7 +74,7 @@ else
     <tr>
         <td width="50%" valign="top"> 
             <h2>Below is the changing robot parameters function section</h2>
-            <form style="height: 100px;" method="post" action="http://192.168.1.215/cgi-bin/edit.py">
+            <form style="height: 100px;" method="post" action="cgi-bin/edit.py">
                 <b> Choose the file in which the parameters you want to  be changed : </b><br></br>
                 <input name="filename" value="camera.cfg" type="radio">camera.cfg
                 <input name="filename" value="hardware.cfg" type="radio">hardware.cfg
@@ -91,32 +91,32 @@ else
                 <tr>
                     <td>
 
-                        <form method="post" action="http://192.168.1.215/cgi-bin/reboot.cgi">
+                        <form method="post" action="cgi-bin/reboot.cgi">
                             <p><input id="reboot" value="reboot" type="submit"></p>
                         </form>
                     </td>
                     <td>
-                        <form method="post" action="http://192.168.1.215/cgi-bin/poweroff.cgi">
+                        <form method="post" action="cgi-bin/poweroff.cgi">
                             <p><input id="poweroff" value="poweroff" type="submit"></p>
                         </form>
                     </td>
                     <td>
-                        <form method="post" action="http://192.168.1.215/cgi-bin/rebot.cgi">
+                        <form method="post" action="cgi-bin/rebot.cgi">
                             <p><input id="startRebot" value="Start rebot" type="submit"></p>
                         </form>
                     </td>
                     <td>
-                        <form method="post" action="http://192.168.1.215/cgi-bin/kill_rebot.cgi">
+                        <form method="post" action="cgi-bin/kill_rebot.cgi">
                             <p><input id="killRebot" value="Kill rebot" type="submit"></p>
                         </form>
                     </td>
                     <td>
-                        <form method="post" action="http://192.168.1.215/cgi-bin/start_monitor.cgi">
+                        <form method="post" action="cgi-bin/start_monitor.cgi">
                             <p><input id="startMonitor"value="start monitor" type="submit"></p>
                         </form>
                     </td>
                     <td>
-                        <form method="post" action="http://192.168.1.215/cgi-bin/kill_monitor.cgi">
+                        <form method="post" action="cgi-bin/kill_monitor.cgi">
                             <p><input id="killMonitor" value="Kill monitor" type="submit"></p>
                         </form>
                     </td>
@@ -129,7 +129,7 @@ else
             </div>
             <p class="flip">Mouse on me to toggle on&off the HowTo</p>
 
-            <form enctype="multipart/form-data" action="http://192.168.1.215/cgi-bin/save_file.py" method="post">
+            <form enctype="multipart/form-data" action="cgi-bin/save_file.py" method="post">
                 <p>File to upload: <input name="file" type="file"></p>
                 <p>Dest dir is : <input name="dir" type="text"></p>
                 <p><input value="Beam" type="submit"></p>
