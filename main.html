@@ -14,11 +14,10 @@
             alert("The rebot has been started");
           });
          $("#killRebot").click(function(){
-			 alert("The rebot has been killed");
-			 $.post("/cgi-bin/kill_rebot.cgi");
+	        
           });
          $("#killMonitor").click(function(){
-            alert("The Monitor has been killed");
+            
           });
          $("#startMonitor").click(function(){
             alert("The Monitor has been Started, Please refresh the web page to monitor");
@@ -90,7 +89,6 @@ else
             <table border="0" width="100%"    cellpadding="10"> 
                 <tr>
                     <td>
-
                         <form method="post" action="cgi-bin/reboot.cgi">
                             <p><input id="reboot" value="reboot" type="submit"></p>
                         </form>
@@ -106,9 +104,9 @@ else
                         </form>
                     </td>
                     <td>
-                            
+                            <form method="post" action="cgi-bin/kill_rebot.cgi">
                             <p><input id="killRebot" value="Kill rebot" type="submit"></p>
-                            
+                            </form>
                     </td>
                     <td>
                         <form method="post" action="cgi-bin/start_monitor.cgi">
@@ -124,7 +122,7 @@ else
             </table>
             <h2>Below is uploading file section</h2>
             <div class="panel">
-            <b>For example : Dest Dir is like /home/bot5/cxy/ . And you must have the right permission of your dest dir !</b><br>
+            <b>For example : Dest Dir is like /home/bot5/cxy/ . And you must have the right permission of your dest dir and your dest dir is existed !</b><br>
             <b>Important !!  Do not forget the  last "/"  , or the Beam will fail!</b>
             </div>
             <p class="flip">Click me to toggle on&off the HowTo</p>
