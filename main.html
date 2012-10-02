@@ -15,7 +15,7 @@
           });
          $("#killRebot").click(function(){
 			 alert("The rebot has been killed");
-			 $.get("/cgi-bin/kill_rebot.cgi");
+			 $.post("/cgi-bin/kill_rebot.cgi");
           });
          $("#killMonitor").click(function(){
             alert("The Monitor has been killed");
