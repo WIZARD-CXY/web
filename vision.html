@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-What I should do when I want to replant this page:
-1.Change "localhost".
-2.Adjust the max and min value of each slider to a proper number.
-3.Change the IDs.
-4.Check other parameter, such as dest, plugin.
--->
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,6 +25,7 @@ What I should do when I want to replant this page:
 			max:64,
 			change: function(event, ui){
 				setControl(0,0,9963776,1,ui.value);
+				$("#BrightnessSpan").html("Brightness :  "+ui.value);
 			}
 			});
 			$("#Contrast").slider({
@@ -39,6 +33,7 @@ What I should do when I want to replant this page:
 			max:95,
 			change: function(event, ui){
 				setControl(0,0,9963777,1,ui.value);
+				$("#ContrastSpan").html("Contrast :  "+ui.value);
 			}
 			});
 			$("#Saturation").slider({
@@ -46,6 +41,7 @@ What I should do when I want to replant this page:
 			max:128,
 			change: function(event, ui){
 				setControl(0,0,9963778,1,ui.value);
+				$("#SaturationSpan").html("Saturation :  "+ui.value);
 			}
 			});
 			$("#Hue").slider({
@@ -53,6 +49,7 @@ What I should do when I want to replant this page:
 			max:40,
 			change: function(event, ui){
 				setControl(0,0,9963779,1,ui.value);
+				$("#HueSpan").html("Hue :  "+ui.value);
 			}
 			});
 			$("#White").slider({
@@ -60,6 +57,7 @@ What I should do when I want to replant this page:
 			max:6500,
 			change: function(event, ui){
 				setControl(0,0,9963802,1,ui.value);
+				$("#WhiteSpan").html("White Balance Temperature :  "+ui.value);
 			}
 			});
 			$("#Gamma").slider({
@@ -67,6 +65,7 @@ What I should do when I want to replant this page:
 			max:500,
 			change: function(event, ui){
 				setControl(0,0,9963792,1,ui.value);
+				$("#GammaSpan").html("Gamma :  "+ui.value);
 			}
 			});
 			$("#Gain").slider({
@@ -74,6 +73,7 @@ What I should do when I want to replant this page:
 			max:100,
 			change: function(event, ui){
 				setControl(0,0,9963795,1,ui.value);
+				$("#GainSpan").html("Gain :  "+ui.value);
 			}
 			});
 			$("#Sharpness").slider({
@@ -81,6 +81,7 @@ What I should do when I want to replant this page:
 			max:7,
 			change: function(event, ui){
 				setControl(0,0,9963803,1,ui.value);
+				$("#SharpnessSpan").html("Sharpness :  "+ui.value);
 			}
 			});
 		});
@@ -91,39 +92,31 @@ What I should do when I want to replant this page:
 	<h1>Camera Parameter Adjust</h1>
 	<table boder="0">
 	<tr>
-	<td rowspan="8">
+	<td rowspan="8" style="width:700px">
 	<img src="http://localhost:8080/?action=stream" alt="To be displayed" />
 	</td>
-	<td><p>Brightness</p></td>
-	<td><div class=slider id="Brightness"></div></td>
+	<td><p><span id="BrightnessSpan">Brightness :  N/A</span></p><div class=slider id="Brightness"></div></td>
 	</tr>
 	<tr>
-	<td><p>Contrast</p></td>
-	<td><div class=slider id="Contrast"></div></td>
+	<td><p><span id="ContrastSpan">Contrast :  N/A</span></p><div class=slider id="Contrast"></div></td>
 	</tr>
 	<tr>
-	<td><p>Saturation</p></td>
-	<td><div class=slider id="Saturation"></div></td>
+	<td><p><span id="SaturationSpan">Saturation :  N/A</span></p><div class=slider id="Saturation"></div></td>
 	</tr>
 	<tr>
-	<td><p>Hue</p></td>
-	<td><div class=slider id="Hue"></div></td>
+	<td><p><span id="HueSpan">Hue :  N/A</span></p><div class=slider id="Hue"></div></td>
 	</tr>
 	<tr>
-	<td><p>White Balance Temperature</p></td>
-	<td><div class=slider id="White"></div></td>
+	<td><p><span id="WhiteSpan">White Balance Temperature :  N/A</span></p><div class=slider id="White"></div></td>
 	</tr>
 	<tr>
-	<td><p>Gamma</p></td>
-	<td><div class=slider id="Gamma"></div></td>
+	<td><p><span id="GammaSpan">Gamma :  N/A</span></p><div class=slider id="Gamma"></div></td>
 	</tr>
 	<tr>
-	<td><p>Gain</p></td>
-	<td><div class=slider id="Gain"></div></td>
+	<td><p><span id="GainSpan">Gain :  N/A</span></p><div class=slider id="Gain"></div></td>
 	</tr>
 	<tr>
-	<td><p>Sharpness</p></td>
-	<td><div class=slider id="Sharpness"></div></td>
+	<td><p><span id="SharpnessSpan">Sharpness :  N/A</span></p><div class=slider id="Sharpness"></div></td>
 	</tr>
 	</table>
 </body>
