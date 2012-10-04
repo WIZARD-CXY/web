@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+What I should do when I want to replant this page:
+1.Change "localhost".
+2.Adjust the max and min value of each slider to a proper number.
+3.Change the IDs.
+4.Check other parameter, such as dest, plugin.
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Camera Adjust</title>
+        <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<style>
+	.slider{
+		width:300px;
+	}
+	</style>
+  	<script src="jquery-1.8.0.min.js"></script>
+  	<script src="jquery-ui.min.js"></script>
+	<script>
+	function setControl(dest, plugin, id, group, value)
+	{
+          $.get("/?action=command&id="+id+"&dest="+dest+"&group="+group+"&value="+value+"&plugin="+plugin);
+	}
+	</script>
+	<script>
+	$(document).ready(function() {
+		$(function() {
+			$("#Brightness").slider({
+			min:-64,
+			max:64,
+			change: function(event, ui){
+				setControl(0,0,9963776,1,ui.value);
+			}
+			});
+			$("#Contrast").slider({
+			min:0,
+			max:95,
+			change: function(event, ui){
+				setControl(0,0,9963777,1,ui.value);
+			}
+			});
+			$("#Saturation").slider({
+			min:0,
+			max:128,
+			change: function(event, ui){
+				setControl(0,0,9963778,1,ui.value);
+			}
+			});
+			$("#Hue").slider({
+			min:-40,
+			max:40,
+			change: function(event, ui){
+				setControl(0,0,9963779,1,ui.value);
+			}
+			});
+			$("#White").slider({
+			min:2800,
+			max:6500,
+			change: function(event, ui){
+				setControl(0,0,9963802,1,ui.value);
+			}
+			});
+			$("#Gamma").slider({
+			min:72,
+			max:500,
+			change: function(event, ui){
+				setControl(0,0,9963792,1,ui.value);
+			}
+			});
+			$("#Gain").slider({
+			min:0,
+			max:100,
+			change: function(event, ui){
+				setControl(0,0,9963795,1,ui.value);
+			}
+			});
+			$("#Sharpness").slider({
+			min:0,
+			max:7,
+			change: function(event, ui){
+				setControl(0,0,9963803,1,ui.value);
+			}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<h1>Camera Parameter Adjust</h1>
+	<table boder="0">
+	<tr>
+	<td rowspan="8">
+	<img src="http://localhost:8080/?action=stream" alt="To be displayed" />
+	</td>
+	<td><p>Brightness</p></td>
+	<td><div class=slider id="Brightness"></div></td>
+	</tr>
+	<tr>
+	<td><p>Contrast</p></td>
+	<td><div class=slider id="Contrast"></div></td>
+	</tr>
+	<tr>
+	<td><p>Saturation</p></td>
+	<td><div class=slider id="Saturation"></div></td>
+	</tr>
+	<tr>
+	<td><p>Hue</p></td>
+	<td><div class=slider id="Hue"></div></td>
+	</tr>
+	<tr>
+	<td><p>White Balance Temperature</p></td>
+	<td><div class=slider id="White"></div></td>
+	</tr>
+	<tr>
+	<td><p>Gamma</p></td>
+	<td><div class=slider id="Gamma"></div></td>
+	</tr>
+	<tr>
+	<td><p>Gain</p></td>
+	<td><div class=slider id="Gain"></div></td>
+	</tr>
+	<tr>
+	<td><p>Sharpness</p></td>
+	<td><div class=slider id="Sharpness"></div></td>
+	</tr>
+	</table>
+</body>
+</html>
