@@ -14,11 +14,15 @@
 	function setControl(dest, plugin, id, group, value)
 	{
           $.get("/?action=command&id="+id+"&dest="+dest+"&group="+group+"&value="+value+"&plugin="+plugin);
-	}
-	</script>
-	<script>
+	};
+
+        function getInputjson(){
+        $.getJSON("input.json",function(data) {
+          	alert("haha");
+        })
+        };
+
 	$(document).ready(function() {
-		$(function() {
 			$("#Brightness").slider({
 			min:-64,
 			max:64,
@@ -83,9 +87,14 @@
 				$("#SharpnessSpan").html("Sharpness :  "+ui.value);
 			}
 			});
-		});
-	});
-	</script>
+                       $("#getInputjson").click(function(){
+                              alert("hello");
+                              $.getJSON("/input.json",function(data) {
+          	                        alert(data);
+                              });
+                       });
+});
+</script>
 </head>
 <body>
 	<h1>Camera Parameter Adjust</h1>
@@ -126,5 +135,6 @@
 	</tr>
 	<br/>
 	</table>
+        <button id="getInputjson">Get Input Json</Button>
 </body>
 </html>
