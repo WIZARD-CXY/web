@@ -1,0 +1,11 @@
+<html><head><title>Wizard Robot Assist for ZJUDancer !</title> 
+        <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<body>
+        <script type="text/javascript">
+        var json = '{"controls": [{"name": "Brightness","id": "9963776","type": "1","min": "-128","max": "127","step": "1","default":"0","value": "0","dest": "0","flags": "0","group": "1"},{"name": "Contrast","id": "9963777","type": "1","min": "0","max": "100","step": "1","default": "0","value": "0","dest": "0","flags": "0","group": "1"}]}';
+var obj = jQuery.parseJSON(json);
+alert( (obj.controls)[0].id);
+</script>
+</body>
+</html>
