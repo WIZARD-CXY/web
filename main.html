@@ -1,82 +1,83 @@
 <html>
-    <head>
-        <title>Wizard Robot Assist for ZJUDancer !</title> 
-        <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
-        <script type="text/javascript"> 
-         $(document).ready(function(){
+<head>
+<title>Wizard Robot Assist for ZJUDancer !</title> 
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
 
-            $("#reboot").click(function(){
-              alert("The Robot is rebooting, Please wait........");
-             });
+       $("#reboot").click(function(){
+        alert("The Robot is rebooting, Please wait........");
+       });
 
-             $("#poweroff").click(function(){
-              alert("The Robot is poweroffing......");
-             });
+       $("#poweroff").click(function(){
+        alert("The Robot is poweroffing......");
+       });
 
-             $("#startRebot").click(function(){
-              alert("The rebot has been started");
-             });
+       $("#startRebot").click(function(){
+        alert("The rebot has been started");
+       });
 
-             $("#killRebot").click(function(){
-              
-             });
+       $("#killRebot").click(function(){
+        
+       });
 
-             $("#killMonitor").click(function(){
+       $("#killMonitor").click(function(){
 
-             });
-             $("#startMonitor").click(function(){
-               alert("The Monitor has been Started, Please refresh the web page to monitor");
-             });
+       });
 
-             $(".flip").click(function(){
-               $(".panel").slideToggle("slow");
-             });
-           
-             $("button#1").click(function(){
-               $("body").css("background-color","blue");
-             });
-             $("button#2").click(function(){
-               $("body").css("background-color","red");
-             });
-            $("button#3").click(function(){
-               $("body").css("background-color","green");
-             });
-            $("button#4").click(function(){
-               $("body").css("background-color","FF3300");
-             });
-            $("button#5").click(function(){
-               $("body").css("background-color","yellow");
-             });
-            $("button#6").click(function(){
-               $("body").css("background-color","purple");
-             });
-             $("button#7").click(function(){
-               $("body").css("background-color","#C0C0C0");
-             });   
-           });
-          </script>
-          <style type="text/css"> 
-             div.panel,p.flip
-             {
-               margin:0px;
-               padding:5px;
-               text-align:center;
-               background:#CC99FF;
-               border:solid 1px #c3c3c3;
-             }
-            div.panel
-            {
-                height:80px;
-                display:none;
-             }
-         </style>
+       $("#startMonitor").click(function(){
+            window.location.href="";
+       });
+
+       $(".flip").click(function(){
+            $(".panel").slideToggle("slow");
+       });
+     
+       $("button#1").click(function(){
+         $("body").css("background-color","blue");
+       });
+       $("button#2").click(function(){
+         $("body").css("background-color","red");
+       });
+       $("button#3").click(function(){
+         $("body").css("background-color","green");
+       });
+       $("button#4").click(function(){
+         $("body").css("background-color","FF3300");
+       });
+       $("button#5").click(function(){
+         $("body").css("background-color","yellow");
+       });
+       $("button#6").click(function(){
+         $("body").css("background-color","purple");
+       });
+       $("button#7").click(function(){
+         $("body").css("background-color","#C0C0C0");
+       });
+});
+</script>
+<style type="text/css"> 
+   div.panel,p.flip
+   {
+     margin:0px;
+     padding:5px;
+     text-align:center;
+     background:#CC99FF;
+     border:solid 1px #c3c3c3;
+   }
+  div.panel
+  {
+      height:80px;
+      display:none;
+   }
+</style>
 </head>
 <body>
       <h1 align="center">This is the Wizard Robot Assist of WIZARD RTOS for Bot5. </h1>
-        <marquee scrollamount=4 ><font size=5> Created By Wizard CXY !</font></marquee>
-        <img src="img/blue_wizard.gif" alt="smile face">
-         <p>You can choose your favourite skin color below</p>
+      <marquee scrollamount=4 ><font size=5> Created By Wizard CXY !</font></marquee>
+      <img src="img/blue_wizard.gif" alt="smile face">
+      <p>You can choose your favourite skin color below</p>
             <button id=1 type="button">Color me blue</button>
             <button id=2 type="button">Color me red</button>
             <button id=3 type="button">Color me green</button>
@@ -139,7 +140,7 @@
                 <b>For example : Dest Dir is like /home/bot5/cxy/ . And you must have the right permission of your dest dir and your dest dir is existed !</b><br>
                 <b>Important !!  Do not forget the  last "/"  , or the Beam will fail!</b>
             </div>
-            <p class="flip">Click me to toggle on&off the HowTo</p>
+            <p class="flip">Click me to toggle on/off the HowTo</p>
             <form enctype="multipart/form-data" action="cgi-bin/save_file.cgi" method="post">
                 <p>File to upload: <input name="file" type="file"></p>
                 <p>Dest dir is : <input name="dir" type="text"></p>
