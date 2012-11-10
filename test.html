@@ -1,12 +1,24 @@
 ﻿<html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css"/>
+    div {
+      position  : relative; 
+      overflow  : hidden;
+      width     : 1440px; 
+      height    : 900px; 
+     }
+
+    img#fish {
+      position  : absolute;
+      left      : 300px;
+      top       : 100px;
+    }
   </head>
   <body>
     <div>
-      <Img src="img/bg.jpg"/>
-      <Img src="img/fish.png" id="fish" />
+      <img src="img/bg.jpg"/>
+      <img src="img/fish.png" id="fish" />
     </div>
     Left: <input type="text" id="leftText"/>
     Top: <input type="text" id="topText"/>
