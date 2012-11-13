@@ -49,7 +49,7 @@ text = text+"white_balance_temperature: "
 text = text+form.getvalue('white')     
 text = text+"\n" 
 
-f=open('a.txt','w')
+f=open('/home/yuling/configure/camera.cfg','w')
 f.write(text)
 f.close()
 
