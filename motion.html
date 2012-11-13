@@ -1,5 +1,5 @@
 <html>
-    <head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <head><meta content="text/html; charset=utf-8" http-equiv="content-type">
         <link rel="stylesheet" type="text/css" href="/themes/default/easyui.css">
         <link rel="stylesheet" type="text/css" href="/themes/icon.css">
         <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
@@ -33,19 +33,24 @@
             $("#RightSideKick").click(function(){
                $.get("cgi-bin/BodyMotionClient.cgi?command=r");
             });
+            $("#syncGaitData").click(function(){
+                $.get("cgi-bin/syncGaitData.cgi");
+            });
         });
     </script>
     <style>
         button {
-	  width:240px;
-	  height:180px;
-        font-size:60px
-	  }
+	  width:160px;
+	  height:100px;
+               font-size:40px
+        }
     </style>
     </head>
     <body>
         <h1>Motion Page</h1>
-        <img src="http://192.168.1.215:8080/?action=stream" alt="To be displayed" /><br/>
+        <button id="syncGaitData">同步步态文件</button>
+        <img src="http://192.168.1.215:8080/?action=stream" alt="Not work now" /><br/>
+        <img src="img/1.jpg"><img src="img/2.jpg"><br/>
         <button type="button" id="Start">Start</button> 
 	  <br/>
         <button type="button" id="Forward">Forward</button>

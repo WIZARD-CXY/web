@@ -4,7 +4,7 @@
 <title>Vision Page</title>
 <link href="js/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <style>
-        .slider{
+    .slider{
     width:300px;
 }
 </style>
@@ -76,21 +76,10 @@ $(document).ready(function() {
 		$("#SharpnessSpan").html("Sharpness :  "+ui.value);
 	}
 	});
-             $("#getInputjson").click(function(){
-                      alert("hello");
-                      $.getJSON("/input.json",function(data) {
-  	                        alert(data);
-                      });
-             });
+   
              function setControl(dest, plugin, id, group, value)
              {
-               $.get("/?action=command&id="+id+"&dest="+dest+"&group="+group+"&value="+value+"&plugin="+plugin);
-             };
-
-             function getInputjson(){
-                 $.getJSON("input.json",function(data) {
-              	alert("haha");
-             })
+               $.get("http://192.168.1.215:8080?action=command&id="+id+"&dest="+dest+"&group="+group+"&value="+value+"&plugin="+plugin);
              };
 });
 </script>
@@ -134,6 +123,5 @@ $(document).ready(function() {
 	</tr>
 	<br/>
 	</table>
-        <button id="getInputjson">Get Input Json</Button>
 </body>
 </html>
