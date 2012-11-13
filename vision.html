@@ -11,13 +11,17 @@
 <script src="js/jquery-1.8.0.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script>
+var brightness, contrast, saturation, hue, whiteauto=0, white, gamma, gain, sharpness, exposureauto=1,exposure=1;
 $(document).ready(function() {
+
+	//TODO:Initial
 	$("#Brightness").slider({
 	min:-64,
 	max:64,
 	change: function(event, ui){
 		setControl(0,0,9963776,1,ui.value);
 		$("#BrightnessSpan").html("Brightness :  "+ui.value);
+		brightness=ui.value;
 	}
 	});
 	$("#Contrast").slider({
@@ -26,6 +30,7 @@ $(document).ready(function() {
 	change: function(event, ui){
 		setControl(0,0,9963777,1,ui.value);
 		$("#ContrastSpan").html("Contrast :  "+ui.value);
+		contrast=ui.value;
 	}
 	});
 	$("#Saturation").slider({
@@ -34,6 +39,7 @@ $(document).ready(function() {
 	change: function(event, ui){
 		setControl(0,0,9963778,1,ui.value);
 		$("#SaturationSpan").html("Saturation :  "+ui.value);
+		saturation=ui.value;
 	}
 	});
 	$("#Hue").slider({
@@ -42,6 +48,7 @@ $(document).ready(function() {
 	change: function(event, ui){
 		setControl(0,0,9963779,1,ui.value);
 		$("#HueSpan").html("Hue :  "+ui.value);
+		hue=ui.value;
 	}
 	});
 	$("#White").slider({
@@ -50,6 +57,7 @@ $(document).ready(function() {
 	change: function(event, ui){
 		setControl(0,0,9963802,1,ui.value);
 		$("#WhiteSpan").html("White Balance Temperature :  "+ui.value);
+		white=ui.value;
 	}
 	});
 	$("#Gamma").slider({
@@ -58,6 +66,7 @@ $(document).ready(function() {
 	change: function(event, ui){
 		setControl(0,0,9963792,1,ui.value);
 		$("#GammaSpan").html("Gamma :  "+ui.value);
+		gamma=ui.value;
 	}
 	});
 	$("#Gain").slider({
@@ -66,6 +75,7 @@ $(document).ready(function() {
 	change: function(event, ui){
 		setControl(0,0,9963795,1,ui.value);
 		$("#GainSpan").html("Gain :  "+ui.value);
+		gain=ui.value;
 	}
 	});
 	$("#Sharpness").slider({
@@ -74,6 +84,7 @@ $(document).ready(function() {
 	change: function(event, ui){
 		setControl(0,0,9963803,1,ui.value);
 		$("#SharpnessSpan").html("Sharpness :  "+ui.value);
+		sharpness=ui.value;
 	}
 	});
    
@@ -82,6 +93,22 @@ $(document).ready(function() {
                $.get("http://192.168.1.215:8080?action=command&id="+id+"&dest="+dest+"&group="+group+"&value="+value+"&plugin="+plugin);
              };
 });
+function savecam()
+{
+    $.get("/cgi-bin/save_camera.cgi",
+    	        {"brightness":brightness,
+    	         "contrast":contrast,
+    	         "saturation":saturation,
+    	         "hue":hue,
+    	         "whiteauto":whiteauto,
+    	         "white":white,
+    	         "gamma":gamma,
+    	         "gain":gain,
+    	         "sharpness":sharpness,
+    	         "exposure":exposure,
+    	         "exposureauto":exposureauto},
+    	         function(){alert("Parameter has saved!");});
+}
 </script>
 </head>
 <body>
@@ -123,5 +150,6 @@ $(document).ready(function() {
 	</tr>
 	<br/>
 	</table>
+     <input type="button" value="save" onclick="savecam()"></input>
 </body>
 </html>

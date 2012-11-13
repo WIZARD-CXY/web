@@ -3,6 +3,7 @@
 
 	var okButton = document.getElementById("okButton"),
 		autoButton = document.getElementById("autoButton"),
+		locateButton = document.getElementById("locateButton"),
 		leftText = document.getElementById("leftText"),
 		topText = document.getElementById("topText"),
 		fish = document.getElementById("fish"),
@@ -39,6 +40,17 @@
 			setTimeout(interval, 100);
 		
 	};
+	var GetPosition=function(){
+		  $.getJSON("cgi-bin/makeJSON.py", function(data) {
+        		left=data.x;
+			right=data.y;
+			leftText.value = left;
+			topText.value = top;
+			fish.style.left = left + "px";
+			fish.style.top = top + "px";
+			setTimeout(GetPosition, 1000);
+		  });
+	};
 
 	okButton.addEventListener("click", function() {
 		fish.style.left = leftText.value + "px";
@@ -51,4 +63,9 @@
 		interval();
 	}, false);
 	
+	locateButton.addEventListener("click", function() {
+		top = 0;
+		left = 0;
+		GetPosition();
+	}, false);
 })(window, document);
