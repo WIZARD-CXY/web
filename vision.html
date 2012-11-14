@@ -11,10 +11,8 @@
 <script src="js/jquery-1.8.0.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script>
-var brightness, contrast, saturation, hue, whiteauto=0, white, gamma, gain, sharpness, exposureauto=1,exposure=1;
+var brightness=0, contrast=32, saturation=64, hue=0, whiteauto=0, white=5700, gamma=100, gain=0, sharpness=3, exposureauto=1,exposure=1;
 $(document).ready(function() {
-
-	//TODO:Initial
 	$("#Brightness").slider({
 	min:-64,
 	max:64,
@@ -112,6 +110,7 @@ function savecam()
 </script>
 </head>
 <body>
+	<!-- TODO:ADD Exposure -->
 	<h1>Camera Parameter Adjust</h1>
 	<table boder="0">
 	<tr>
@@ -119,34 +118,42 @@ function savecam()
 	<img src="http://192.168.1.215:8080/?action=stream" alt="To be displayed" />
 	</td>
 	<td><p><span id="BrightnessSpan">Brightness :  N/A</span></p><div class=slider id="Brightness"></div></td>
+	<td>Recommended:0</td>
 	</tr>
 	<br/>
 	<tr>
 	<td><p><span id="ContrastSpan">Contrast :  N/A</span></p><div class=slider id="Contrast"></div></td>
+	<td>Recommended:32</td>
 	</tr>
 	<br/>
 	<tr>
 	<td><p><span id="SaturationSpan">Saturation :  N/A</span></p><div class=slider id="Saturation"></div></td>
+	<td>Recommended:64</td>
 	</tr>
 	<br/>
 	<tr>
 	<td><p><span id="HueSpan">Hue :  N/A</span></p><div class=slider id="Hue"></div></td>
+	<td>Recommended:0</td>
 	</tr>
 	<br/>
 	<tr>
 	<td><p><span id="WhiteSpan">White Balance Temperature :  N/A</span></p><div class=slider id="White"></div></td>
+	<td>Recommended:5700</td>
 	</tr>
 	<br/>
 	<tr>
 	<td><p><span id="GammaSpan">Gamma :  N/A</span></p><div class=slider id="Gamma"></div></td>
+	<td>Recommended:100</td>
 	</tr>
 	<br/>
 	<tr>
 	<td><p><span id="GainSpan">Gain :  N/A</span></p><div class=slider id="Gain"></div></td>
+	<td>Recommended:0</td>
 	</tr>
 	<br/>
 	<tr>
 	<td><p><span id="SharpnessSpan">Sharpness :  N/A</span></p><div class=slider id="Sharpness"></div></td>
+	<td>Recommended:3</td>
 	</tr>
 	<br/>
 	</table>
