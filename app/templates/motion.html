@@ -1,0 +1,66 @@
+<html>
+    <head><meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <link rel="stylesheet" type="text/css" href="/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="/themes/icon.css">
+        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript">
+         $(document).ready(function(){
+            $("#Start").click(function(){
+               $.get("cgi-bin/BodyMotionServer.cgi");
+               $("#Start").attr("disabled","disabled");
+            });
+            $("#Forward").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=w");
+            });
+            $("#Back").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=s");
+            });
+            $("#Left").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=z");
+            });
+            $("#Right").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=c");
+            });
+            $("#Stop").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=r");
+            });
+            $("#LeftKick").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=q");
+            });
+            $("#RightKick").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=e");
+            });
+            $("#RightSideKick").click(function(){
+               $.get("cgi-bin/BodyMotionClient.cgi?command=r");
+            });
+            $("#syncGaitData").click(function(){
+                $.get("cgi-bin/syncGaitData.cgi");
+            });
+        });
+    </script>
+    <style>
+        button {
+	  width:160px;
+	  height:100px;
+               font-size:40px
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Motion Page</h1>
+        <button id="syncGaitData">同步步态文件</button>
+        <img src="http://192.168.1.215:8080/?action=stream" alt="Not work now" /><br/>
+        <img src="img/1.jpg"><img src="img/2.jpg"><br/>
+        <button type="button" id="Start">Start</button> 
+	  <br/>
+        <button type="button" id="Forward">Forward</button>
+        <button type="button" id="Back">Back</button>
+        <button type="button" id="Left">Left</button>
+        <button type="button" id="Right">Right</button>
+        <button type="button" id="Stop">Stop</button>
+	  <br/>
+	  <button type="button" id="LeftKick">LKick</button>
+        <button type="button" id="RightKick">RKick</button>
+        <button type="button" id="RightSideKick">RSKick</button>
+    </body>
+</html>

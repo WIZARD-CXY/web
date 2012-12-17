@@ -1,0 +1,15 @@
+<html>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function() {
+  $.getJSON("cgi-bin/makeJSON.py", function(data) {
+        $('#test').html("location x : " + data.x +"  location y : " + data.y);
+    });
+});
+</script>
+<body>
+<div id="test">
+</div>
+</body>
+</html>
+

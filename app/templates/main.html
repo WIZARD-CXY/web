@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>Wizard Robot Assist for ZJUDancer !</title> 
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+
+       $("#reboot").click(function(){
+        alert("The Robot is rebooting, Please wait........");
+       });
+
+       $("#poweroff").click(function(){
+        alert("The Robot is poweroffing......");
+       });
+
+       $("#startRebot").click(function(){
+        alert("The rebot has been started");
+       });
+
+       $("#killRebot").click(function(){
+        
+       });
+
+       $("#killMonitor").click(function(){
+
+       });
+
+       $("#startMonitor").click(function(){
+            window.location.href="";
+       });
+
+       $(".flip").click(function(){
+            $(".panel").slideToggle("slow");
+       });
+     
+       $("button#1").click(function(){
+         $("body").css("background-color","blue");
+       });
+       $("button#2").click(function(){
+         $("body").css("background-color","red");
+       });
+       $("button#3").click(function(){
+         $("body").css("background-color","green");
+       });
+       $("button#4").click(function(){
+         $("body").css("background-color","FF3300");
+       });
+       $("button#5").click(function(){
+         $("body").css("background-color","yellow");
+       });
+       $("button#6").click(function(){
+         $("body").css("background-color","purple");
+       });
+       $("button#7").click(function(){
+         $("body").css("background-color","#C0C0C0");
+       });
+});
+</script>
+<style type="text/css"> 
+   div.panel,p.flip
+   {
+     margin:0px;
+     padding:5px;
+     text-align:center;
+     background:#CC99FF;
+     border:solid 1px #c3c3c3;
+   }
+  div.panel
+  {
+      height:80px;
+      display:none;
+   }
+</style>
+</head>
+<body>
+      <h1 align="center">This is the Wizard Robot Assist of WIZARD RTOS for Bot5. </h1>
+      <marquee scrollamount=4 ><font size=5> Created By Wizard CXY !</font></marquee>
+      <img src="img/blue_wizard.gif" alt="smile face">
+      <p>You can choose your favourite skin color below</p>
+            <button id=1 type="button">Color me blue</button>
+            <button id=2 type="button">Color me red</button>
+            <button id=3 type="button">Color me green</button>
+            <button id=4 type="button">Color me orange</button>
+            <button id=5 type="button">Color me yellow</button>
+            <button id=6 type="button">Color me purple</button>
+            <button id=7 type="button">Color me grey</button>
+      <hr/>
+<table border="0" width="100%" cellpadding="10">                                                                                                            
+   <tr>
+        <td width="50%" valign="top"> 
+            <h2>Below is the changing robot parameters function section</h2>
+            <form style="height: 100px;" method="post" action="cgi-bin/edit.cgi">
+                <b> Choose the file in which the parameters you want to  be changed : </b><br></br>
+                <input name="filename" value="camera.cfg" type="radio" id="camera.cfg"><label for="camera.cfg">camera.cfg</label>
+                <input name="filename" value="hardware.cfg" type="radio" id="hardware.cfg"><label for="hardware.cfg">hardware.cfg</label>
+                <input name="filename" value="param.cfg" type="radio" id="param.cfg"><label for="param.cfg">param.cfg</label>
+                <input name="filename" value="game.cfg" type="radio" id="game.cfg"><label for="game.cfg">game.cfg</label>
+                <input name="filename" value="netsetting.cfg" type="radio" id="netsetting.cfg"><label for="netsetting.cfg">netsetting.cfg</label>
+                <input name="filename" value="state_setting.cfg" type="radio" id="state_setting.cfg"><label for="state_setting.cfg">state_setting.cfg</label>
+                <p>Click here to submit : <input value="Open" type="submit">   
+            </form>
+            <h2>Below is the control section of the robot</h2>
+            <table border="0" width="100%" cellpadding="10"> 
+                <tr>
+                    <td>
+                        <form method="post" action="cgi-bin/reboot.cgi">
+                            <p><input id="reboot" value="reboot" type="submit"></p>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="cgi-bin/poweroff.cgi">
+                            <p><input id="poweroff" value="poweroff" type="submit"></p>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="cgi-bin/rebot.cgi">
+                            <p><input id="startRebot" value="Start rebot" type="submit"></p>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="cgi-bin/kill_rebot.cgi">
+                            <p><input id="killRebot" value="Kill rebot" type="submit"></p>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="cgi-bin/start_monitor.cgi">
+                            <p><input id="startMonitor" value="start monitor" type="submit"></p>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="cgi-bin/kill_monitor.cgi">
+                            <p><input id="killMonitor" value="Kill monitor" type="submit"></p>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <h2>Below is uploading file section</h2>
+            <div class="panel">
+                <b>For example : Dest Dir is like /home/bot5/cxy/ . And you must have the right permission of your dest dir and your dest dir is existed !</b><br>
+                <b>Important !!  Do not forget the  last "/"  , or the Beam will fail!</b>
+            </div>
+            <p class="flip">Click me to toggle on/off the HowTo</p>
+            <form enctype="multipart/form-data" action="cgi-bin/save_file.cgi" method="post">
+                <p>File to upload: <input name="file" type="file"></p>
+                <p>Dest dir is : <input name="dir" type="text"></p>
+                <p><input value="Beam" type="submit"></p>
+            </form>
+      </td>
+      <td width="50%" valign="top">
+            <h2>Below is Robot vision section</h2>
+            <img src="http://192.168.1.215:8080/?action=stream" alt="Not work for now ..... maybe try again later">
+      </td>
+  </tr>
+</table>
+</body>
+</html>
